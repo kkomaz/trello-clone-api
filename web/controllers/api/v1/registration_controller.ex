@@ -1,7 +1,7 @@
 defmodule PhoenixTrello.RegistrationController  do
   use PhoenixTrello.Web, :controller
 
-  alias PhoenixTrello.{Repo, User}
+  alias PhoenixTrello.User
 
   plug :scrub_params, "user" when action in [:create]
 
