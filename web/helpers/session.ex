@@ -4,7 +4,6 @@ defmodule PhoenixTrello.Session do
 
   def authenticate(%{"email" => email, "password" => password}) do
     user = Repo.get_by(User, email: String.downcase(email))
-    IO.inspect(password)
 
     case check_password(user, password) do
       true -> { :ok, user }

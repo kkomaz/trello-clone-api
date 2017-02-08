@@ -21,10 +21,7 @@ defmodule PhoenixTrello.SessionController do
   end
 
   def delete(conn, _) do
-    IO.inspect(Guardian.Plug.claims(conn))
     {:ok, claims} = Guardian.Plug.claims(conn)
-
-    IO.inspect(claims)
 
     conn
     |> Guardian.Plug.current_token

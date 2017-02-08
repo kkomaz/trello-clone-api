@@ -2,6 +2,7 @@ defmodule PhoenixTrello.GuardianSerializer do
   @behaviour Guardian.Serializer
 
   alias PhoenixTrello.User
+  alias PhoenixTrello.Repo
 
   def for_token(user = %User{}), do: { :ok, "User:#{user.id}" }
   def for_token(_), do: { :error, "Unknown resource type" }
