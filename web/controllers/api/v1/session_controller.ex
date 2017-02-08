@@ -20,6 +20,20 @@ defmodule PhoenixTrello.SessionController do
     end
   end
 
+  def delete(conn, _) do
+    IO.inspect(Guardian.Plug.claims(conn))
+    {:ok, claims} = Guardian.Plug.claims(conn)
+
+    IO.inspect(claims)
+
+    conn
+    |> Guardian.Plug.current_token
+    |> Guardian.revoke!(claims)
+
+    conn
+    |> render("delete.json")
+  end
+
   def unauthenticated(conn, _params) do
     conn
     |> put_status(:forbidden)

@@ -38,5 +38,8 @@ defmodule PhoenixTrello.Endpoint do
     key: "_phoenix_trello_key",
     signing_salt: "Rd/DS+v3"
 
+  # Corsica CORS
+  plug Corsica, origins: "*", allow_headers: ["content-type", "authorization"]
+
   plug PhoenixTrello.Router
 end

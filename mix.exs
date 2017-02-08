@@ -19,7 +19,7 @@ defmodule PhoenixTrello.Mixfile do
   def application do
     [mod: {PhoenixTrello, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :comeonin, :guardian]]
+                    :phoenix_ecto, :postgrex, :comeonin, :guardian, :corsica]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,7 +39,8 @@ defmodule PhoenixTrello.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:comeonin, "~> 2.0"},
-     {:guardian, "~> 0.14"}
+     {:guardian, "~> 0.14"},
+     {:corsica, "~> 0.5"}
    ]
   end
 
